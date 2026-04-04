@@ -1,0 +1,30 @@
+[
+  {
+    "number": 1,
+    "date": "2026-04-05",
+    "rows": [
+      { "type": "hundred", "value": "London Spirit", "label": "London Spirit" },
+      { "type": "stat", "value": "test_runs", "min": 1000, "label": "1000+ Test Runs" },
+      { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" }
+    ],
+    "cols": [
+      { "type": "hundred", "value": "Birmingham Phoenix", "label": "Birmingham Phoenix" },
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "country", "value": "England", "label": "England" }
+    ]
+  },
+  {
+    "number": 1,
+    "date": "2026-04-06",
+    "rows": [
+      { "type": "hundred", "value": "London Spirit", "label": "London Spirit" },
+      { "type": "stat", "value": "test_runs", "min": 1000, "label": "1000+ Test Runs" },
+      { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" }
+    ],
+    "cols": [
+      { "type": "hundred", "value": "Birmingham Phoenix", "label": "Birmingham Phoenix" },
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "country", "value": "England", "label": "England" }
+    ]
+  }
+]
