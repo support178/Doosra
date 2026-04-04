@@ -1,0 +1,30 @@
+[
+  {
+    "number": 1,
+    "date": "2026-04-04",
+    "rows": [
+      { "type": "stat", "value": "test_runs", "min": 1000, "label": "1000+ Test Runs" },
+      { "type": "bbl", "value": "Perth Scorchers", "label": "Perth Scorchers" },
+      { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" }
+    ],
+    "cols": [
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "bbl", "value": "Sydney Sixers", "label": "Sydney Sixers" },
+      { "type": "country", "value": "England", "label": "England" }
+    ]
+  }
+    {
+    "number": 1,
+    "date": "2026-04-05",
+    "rows": [
+      { "type": "stat", "value": "test_runs", "min": 1000, "label": "1000+ Test Runs" },
+      { "type": "bbl", "value": "Perth Scorchers", "label": "Perth Scorchers" },
+      { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" }
+    ],
+    "cols": [
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "bbl", "value": "Sydney Sixers", "label": "Sydney Sixers" },
+      { "type": "country", "value": "England", "label": "England" }
+    ]
+  }
+]
