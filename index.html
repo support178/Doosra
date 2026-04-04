@@ -81,7 +81,6 @@
       margin-bottom: 3px;
     }
 
-    /* Constraint type colours */
     .type-country { background: #1e3a5f; border: 1px solid #2d5a8e; }
     .type-stat    { background: #2d1b4e; border: 1px solid #5b3a8a; }
     .type-ipl     { background: #3d1a00; border: 1px solid #c05a00; }
@@ -198,18 +197,10 @@
       cursor: pointer;
       font-size: 0.9rem;
       border-bottom: 1px solid #252535;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
     .autocomplete-item:hover {
       background: #252540;
-    }
-
-    .autocomplete-item .country {
-      font-size: 0.72rem;
-      color: #777;
     }
 
     .btn {
@@ -256,6 +247,13 @@
       margin-bottom: 4px;
     }
 
+    .puzzle-number {
+      font-size: 0.85rem;
+      color: #f97316;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
     .score-grid {
       font-family: monospace;
       font-size: 1.6rem;
@@ -289,7 +287,6 @@
       line-height: 1.4;
     }
 
-    /* Onboarding modal */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -317,14 +314,6 @@
       color: #fff;
     }
 
-    .modal p {
-      font-size: 0.88rem;
-      color: #aaa;
-      margin-bottom: 10px;
-      line-height: 1.6;
-      text-align: left;
-    }
-
     .modal .rule {
       display: flex;
       align-items: flex-start;
@@ -345,6 +334,11 @@
       line-height: 1.5;
     }
 
+    .modal .rule-text a {
+      color: #f97316;
+      text-decoration: none;
+    }
+
     .modal .btn-close {
       background: #f97316;
       color: #fff;
@@ -357,17 +351,36 @@
       margin-top: 16px;
       width: 100%;
     }
-.title-ball {
-  width: 2.0rem;
-  height: 2.0rem;
-  vertical-align: middle;
-  margin: 0 -2px;
-  position: relative;
-  top: -3px;
-}
-.title-ball-first {
-  margin-left: -2px;
-}
+
+    .title-ball {
+      width: 2.0rem;
+      height: 2.0rem;
+      vertical-align: middle;
+      margin: 0 -2px;
+      position: relative;
+      top: -3px;
+    }
+
+    .title-ball-first {
+      margin-left: -2px;
+    }
+
+    .completed-banner {
+      background: #14532d;
+      border: 1px solid #4ade80;
+      border-radius: 8px;
+      padding: 12px 20px;
+      text-align: center;
+      margin-bottom: 16px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .completed-banner p {
+      font-size: 0.9rem;
+      color: #4ade80;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -396,6 +409,10 @@
       <span class="rule-icon">📋</span>
       <span class="rule-text">Each player can only be used <strong>once</strong>. A new puzzle drops every day.</span>
     </div>
+    <div class="rule">
+      <span class="rule-icon">🏆</span>
+      <span class="rule-text">Also try our regional variants — <a href="/ipl.html">IPL</a>, <a href="/bbl.html">BBL</a> and <a href="/hundred.html">The Hundred</a> — for franchise crossover challenges.</span>
+    </div>
     <button class="btn-close" onclick="closeModal()">Let's Play!</button>
   </div>
 </div>
@@ -422,8 +439,9 @@
 </div>
 
 <div class="result-screen" id="resultScreen">
+  <h2 style="letter-spacing:2px; margin-bottom:8px;">D<img src="ball.svg" class="title-ball" alt="o"><img src="ball.svg" class="title-ball" alt="o">SRA</h2>
+  <p class="puzzle-number" id="puzzleNumber"></p>
   <div class="result-emoji" id="resultEmoji"></div>
-  <h2><span style="letter-spacing:2px;">D<img src="ball.svg" class="title-ball" alt="o"><img src="ball.svg" class="title-ball" alt="o">SRA</span></h2>
   <h2 id="resultTitle" style="letter-spacing:0;"></h2>
   <p class="result-subtitle" id="resultSubtitle"></p>
   <div class="score-grid" id="scoreGrid"></div>
@@ -484,6 +502,39 @@ let cellStates = Array(9).fill(null);
 let usedPlayers = new Set();
 let gameOver = false;
 let TODAY_GRID = null;
+
+// ============================================================
+// PERSISTENT STATE
+// ============================================================
+function getSaveKey() {
+  return `doosra_state_${TODAY_GRID.date}`;
+}
+
+function saveState() {
+  const state = {
+    cellStates,
+    guessesRemaining,
+    gameOver,
+    usedPlayers: [...usedPlayers]
+  };
+  localStorage.setItem(getSaveKey(), JSON.stringify(state));
+}
+
+function loadSavedState() {
+  const saved = localStorage.getItem(getSaveKey());
+  if (!saved) return false;
+  try {
+    const state = JSON.parse(saved);
+    cellStates = state.cellStates;
+    guessesRemaining = state.guessesRemaining;
+    gameOver = state.gameOver;
+    usedPlayers = new Set(state.usedPlayers);
+    document.getElementById('guessCount').textContent = guessesRemaining;
+    return true;
+  } catch(e) {
+    return false;
+  }
+}
 
 // ============================================================
 // CONSTRAINT CHECKER
@@ -624,8 +675,7 @@ document.getElementById('searchInput').addEventListener('input', function() {
   matches.forEach(p => {
     const item = document.createElement('div');
     item.className = 'autocomplete-item';
-    const flag = COUNTRY_FLAGS[p.Country] || '';
-    item.innerHTML = `<span>${p.display_name || p.player}</span><span class="country">${flag} ${p.Country || ''}</span>`;
+    item.textContent = p.display_name || p.player;
     item.addEventListener('click', () => submitGuess(p));
     list.appendChild(item);
   });
@@ -663,6 +713,7 @@ function submitGuess(player) {
     hint.className = 'search-hint';
   }
 
+  saveState();
   renderGrid();
   checkGameOver();
 }
@@ -676,6 +727,7 @@ function checkGameOver() {
 
   if (allCorrect || noGuesses) {
     gameOver = true;
+    saveState();
     setTimeout(showResult, 800);
   }
 }
@@ -690,6 +742,10 @@ function showResult() {
     (s && s !== 'incorrect') ? s.rarity : 0
   );
   const avgRarity = Math.round(rarityScores.reduce((a, b) => a + b, 0) / 9);
+
+  if (TODAY_GRID.number) {
+    document.getElementById('puzzleNumber').textContent = `Doosra #${TODAY_GRID.number}`;
+  }
 
   document.getElementById('resultEmoji').textContent =
     correct === 9 ? '🏆' : correct >= 6 ? '👏' : correct >= 3 ? '🤔' : '😅';
@@ -714,8 +770,9 @@ function shareResult() {
   );
   const avgRarity = Math.round(rarityScores.reduce((a, b) => a + b, 0) / 9);
   const emojis = cellStates.map(s => s && s !== 'incorrect' ? '🟩' : '🟥');
+  const puzzleNum = TODAY_GRID.number ? `#${TODAY_GRID.number} ` : '';
   const text =
-    `Doosra ${TODAY_GRID.date}\n` +
+    `Doosra ${puzzleNum}${TODAY_GRID.date}\n` +
     `${correct}/9 correct | ${10 - guessesRemaining} guesses | Rarity: ${avgRarity}/100\n\n` +
     emojis.slice(0, 3).join('') + '\n' +
     emojis.slice(3, 6).join('') + '\n' +
@@ -749,7 +806,13 @@ Promise.all([
   document.getElementById('loading').style.display = 'none';
   const gc = document.getElementById('gameContainer');
   gc.style.display = 'flex';
+
+  const hasSavedState = loadSavedState();
   renderGrid();
+
+  if (gameOver) {
+    setTimeout(showResult, 300);
+  }
 })
 .catch(err => {
   document.getElementById('loading').textContent =
