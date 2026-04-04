@@ -12,7 +12,7 @@
       { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
       { "type": "ipl", "value": "Chennai Super Kings", "label": "Chennai Super Kings" }
     ]
-  }
+  },
     {
     "number": 1,
     "date": "2026-04-05",
