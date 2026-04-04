@@ -13,4 +13,18 @@
       { "type": "ipl", "value": "Chennai Super Kings", "label": "Chennai Super Kings" }
     ]
   }
+    {
+    "number": 1,
+    "date": "2026-04-05",
+    "rows": [
+      { "type": "ipl", "value": "Mumbai Indians", "label": "Mumbai Indians" },
+{ "type": "country", "value": "West Indies", "label": "West Indies" },
+      { "type": "country", "value": "India", "label": "India" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" },
+      { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
+      { "type": "ipl", "value": "Chennai Super Kings", "label": "Chennai Super Kings" }
+    ]
+  }
 ]
