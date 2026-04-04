@@ -1,0 +1,82 @@
+[
+  {
+    "date": "2026-04-04",
+    "rows": [
+      {
+        "type": "country",
+        "value": "Australia",
+        "label": "Australia"
+      },
+      {
+        "type": "country",
+        "value": "India",
+        "label": "India"
+      },
+      {
+        "type": "country",
+        "value": "South Africa",
+        "label": "South Africa"
+      }
+    ],
+    "cols": [
+      {
+        "type": "stat",
+        "value": "test_runs",
+        "min": 1000,
+        "label": "1000+ Test Runs"
+      },
+      {
+        "type": "stat",
+        "value": "odi_wickets",
+        "min": 100,
+        "label": "100+ ODI Wickets"
+      },
+      {
+        "type": "stat",
+        "value": "test_hundreds",
+        "min": 1,
+        "label": "Scored a Test Century"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-05",
+    "rows": [
+      {
+        "type": "country",
+        "value": "England",
+        "label": "England"
+      },
+      {
+        "type": "country",
+        "value": "Pakistan",
+        "label": "Pakistan"
+      },
+      {
+        "type": "country",
+        "value": "West Indies",
+        "label": "West Indies"
+      }
+    ],
+    "cols": [
+      {
+        "type": "stat",
+        "value": "test_wickets",
+        "min": 100,
+        "label": "100+ Test Wickets"
+      },
+      {
+        "type": "stat",
+        "value": "test_wickets",
+        "min": 100,
+        "label": "100+ Test Wickets"
+      },
+      {
+        "type": "stat",
+        "value": "test_hundreds",
+        "min": 10,
+        "label": "10+ Test Centuries"
+      }
+    ]
+  }
+]
