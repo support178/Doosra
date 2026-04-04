@@ -381,6 +381,39 @@
       color: #4ade80;
       font-weight: 600;
     }
+
+    .nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 16px;
+}
+
+.nav-btn {
+  padding: 7px 4px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  background: #1e1e30;
+  color: #555;
+  border: 1px solid #2a2a3e;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-btn.active {
+  background: #2a1a0a;
+  color: #f97316;
+  border-color: #f97316;
+}
+
+.nav-btn:hover:not(.active) {
+  background: #252535;
+  color: #aaa;
+}
   </style>
 </head>
 <body>
@@ -425,7 +458,12 @@
     <p class="subtitle">Find cricketers who satisfy both the row and column</p>
     <p class="subtitle">Pick obscure answers for a higher rarity score 🎯</p>
   </div>
-
+<nav class="nav-grid">
+  <a href="/index.html" class="nav-btn active">🌍 International</a>
+  <a href="/ipl.html" class="nav-btn">🏏 IPL</a>
+  <a href="/bbl.html" class="nav-btn">🦘 BBL</a>
+  <a href="/hundred.html" class="nav-btn">💯 The Hundred</a>
+</nav>
   <p class="guesses-remaining">Guesses remaining: <span id="guessCount">10</span></p>
   <div class="grid-wrapper" id="grid"></div>
 
