@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doosra · The Hundred</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f0f1a;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .header { text-align: center; margin-bottom: 16px; }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .subtitle { font-size: 0.82rem; color: #999; margin-bottom: 4px; }
+
+    .edition-badge {
+      display: inline-block;
+      background: #1a0a2e;
+      border: 1px solid #6b21a8;
+      color: #a855f7;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .guesses-remaining { font-size: 0.95rem; margin-bottom: 12px; color: #aaa; }
+    .guesses-remaining span { font-weight: 700; color: #4ade80; }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 16px;
+    }
+
+    .nav-btn {
+      padding: 7px 4px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-align: center;
+      background: #1e1e30;
+      color: #555;
+      border: 1px solid #2a2a3e;
+      text-decoration: none;
+      display: block;
+    }
+
+    .nav-btn.active { background: #1a0a2e; color: #a855f7; border-color: #6b21a8; }
+    .nav-btn:hover:not(.active) { background: #252535; color: #aaa; }
+
+    .grid-wrapper {
+      display: grid;
+      grid-template-columns: 100px repeat(3, 1fr);
+      grid-template-rows: 72px repeat(3, 82px);
+      gap: 5px;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .corner { background: transparent; }
+
+    .col-header, .row-header {
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 6px;
+      line-height: 1.3;
+      color: #fff;
+    }
+
+    .col-header .constraint-flag,
+    .row-header .constraint-flag { font-size: 1.1rem; margin-bottom: 3px; }
+
+    .type-country { background: #1e3a5f; border: 1px solid #2d5a8e; }
+    .type-stat    { background: #2d1b4e; border: 1px solid #5b3a8a; }
+    .type-ipl     { background: #3d1a00; border: 1px solid #c05a00; }
+    .type-bbl     { background: #00261a; border: 1px solid #006644; }
+    .type-hundred { background: #1a0a2e; border: 1px solid #6b21a8; }
+    .type-cpl     { background: #1a1a00; border: 1px solid #7a7a00; }
+    .type-psl     { background: #002200; border: 1px solid #006600; }
+    .type-sa20    { background: #1a0000; border: 1px solid #990000; }
+
+    .cell {
+      background: #1a1a2e;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.72rem;
+      padding: 8px;
+      cursor: pointer;
+      border: 2px solid #2a2a3e;
+      transition: border-color 0.15s, background 0.15s;
+      min-height: 82px;
+      line-height: 1.3;
+      color: #aaa;
+    }
+
+    .cell:hover:not(.correct):not(.incorrect) { border-color: #a855f7; background: #1f1f30; color: #fff; }
+    .cell.selected { border-color: #a855f7; background: #1a0a2e; color: #fff; }
+    .cell.correct { background: #14532d; border-color: #4ade80; cursor: default; }
+    .cell.incorrect { background: #3b0a0a; border-color: #f87171; color: #f87171; }
+    .cell .player-name { font-weight: 700; color: #fff; font-size: 0.78rem; }
+    .cell .rarity { font-size: 0.65rem; color: #86efac; margin-top: 3px; }
+
+    .search-container { width: 100%; max-width: 500px; margin-bottom: 12px; position: relative; }
+
+    .search-container input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 2px solid #333;
+      background: #1a1a2e;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .search-container input:focus { border-color: #a855f7; }
+
+    .search-hint { font-size: 0.8rem; color: #555; margin-bottom: 6px; text-align: center; }
+    .search-hint.active { color: #a855f7; font-weight: 600; }
+
+    .autocomplete-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #1e1e30;
+      border: 1px solid #333;
+      border-radius: 8px;
+      max-height: 240px;
+      overflow-y: auto;
+      z-index: 100;
+      margin-top: 2px;
+    }
+
+    .autocomplete-item { padding: 10px 16px; cursor: pointer; font-size: 0.9rem; border-bottom: 1px solid #252535; }
+    .autocomplete-item:hover { background: #252540; }
+
+    .btn { padding: 10px 28px; border-radius: 8px; border: none; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s, transform 0.1s; }
+    .btn:hover { opacity: 0.9; }
+    .btn:active { transform: scale(0.97); }
+    .btn-share { background: #a855f7; color: #fff; margin-top: 16px; letter-spacing: 0.5px; }
+
+    .result-screen { display: none; text-align: center; max-width: 400px; padding: 20px; }
+    .result-screen h2 { font-size: 1.6rem; margin-bottom: 6px; color: #fff; }
+    .result-emoji { font-size: 3rem; margin-bottom: 10px; }
+    .result-subtitle { font-size: 0.9rem; color: #aaa; margin-bottom: 4px; }
+    .puzzle-number { font-size: 1.2rem; color: #fff; font-weight: 700; margin-bottom: 8px; }
+
+    .score-grid {
+      font-family: monospace;
+      font-size: 1.6rem;
+      letter-spacing: 6px;
+      margin: 16px 0;
+      line-height: 2;
+    }
+
+    .loading { font-size: 1.1rem; color: #666; margin-top: 60px; letter-spacing: 1px; }
+
+    .game-container {
+      display: none;
+      width: 100%;
+      align-items: center;
+      flex-direction: column;
+      max-width: 500px;
+    }
+
+    .initials-note {
+      font-size: 0.72rem;
+      color: #666;
+      text-align: center;
+      max-width: 500px;
+      margin-top: -12px;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal {
+      background: #1a1a2e;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 28px 24px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .modal h2 { font-size: 1.4rem; margin-bottom: 12px; color: #fff; }
+    .modal .rule { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; text-align: left; }
+    .modal .rule-icon { font-size: 1rem; margin-top: 1px; flex-shrink: 0; }
+    .modal .rule-text { font-size: 0.85rem; color: #bbb; line-height: 1.5; }
+    .modal .rule-text a { color: #a855f7; text-decoration: none; }
+
+    .modal .btn-close {
+      background: #a855f7;
+      color: #fff;
+      border: none;
+      padding: 10px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 16px;
+      width: 100%;
+    }
+
+    .title-ball { width: 2.0rem; height: 2.0rem; vertical-align: middle; margin: 0 -2px; position: relative; top: -3px; }
+    .title-ball-first { margin-left: -2px; }
+  </style>
+</head>
+<body>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h2>💯 Doosra · The Hundred</h2>
+    <div class="rule">
+      <span class="rule-icon">🎯</span>
+      <span class="rule-text">Fill the 3×3 grid by finding a cricketer who satisfies <strong>both</strong> the row and column constraint for each cell.</span>
+    </div>
+    <div class="rule">
+      <span class="rule-icon">💯</span>
+      <span class="rule-text">Every grid features <strong>Hundred franchise</strong> constraints crossed with nationalities and stats.</span>
+    </div>
+    <div class="rule">
+      <span class="rule-icon">⚡</span>
+      <span class="rule-text">You have <strong>10 guesses</strong> shared across all 9 cells. Wrong answers count!</span>
+    </div>
+    <div class="rule">
+      <span class="rule-icon">⭐</span>
+      <span class="rule-text">Pick obscure players for a higher <strong>rarity score</strong>.</span>
+    </div>
+    <div class="rule">
+      <span class="rule-icon">📋</span>
+      <span class="rule-text">Each player can only be used <strong>once</strong>. A new puzzle drops every day.</span>
+    </div>
+    <div class="rule">
+      <span class="rule-icon">🌍</span>
+      <span class="rule-text">Also play <a href="/index.html">International</a>, <a href="/ipl.html">IPL</a> and <a href="/bbl.html">BBL</a> editions.</span>
+    </div>
+    <button class="btn-close" onclick="closeModal()">Let's Play!</button>
+  </div>
+</div>
+
+<p class="loading" id="loading">Loading Doosra · The Hundred...</p>
+
+<div class="game-container" id="gameContainer">
+  <div class="header">
+    <h1><span style="letter-spacing:0">D<img src="ball.svg" class="title-ball title-ball-first" alt="o"></span><img src="ball.svg" class="title-ball" alt="o">SRA</h1>
+    <div class="edition-badge">💯 THE HUNDRED</div>
+    <p class="subtitle">Find cricketers who satisfy both the row and column</p>
+    <p class="subtitle">Pick obscure answers for a higher rarity score 🎯</p>
+  </div>
+
+  <nav class="nav-grid">
+    <a href="/index.html" class="nav-btn">🌍 International</a>
+    <a href="/ipl.html" class="nav-btn">🏏 IPL</a>
+    <a href="/bbl.html" class="nav-btn">🦘 BBL</a>
+    <a href="/hundred.html" class="nav-btn active">💯 The Hundred</a>
+  </nav>
+
+  <p class="guesses-remaining">Guesses remaining: <span id="guessCount">10</span></p>
+  <div class="grid-wrapper" id="grid"></div>
+
+  <p class="initials-note">Older or more obscure players may be listed by initials and surname. Try searching by surname only.</p>
+
+  <p class="search-hint" id="searchHint">Select a cell to start guessing</p>
+  <div class="search-container" id="searchContainer" style="display:none">
+    <input type="text" id="searchInput" placeholder="Type a player name..." autocomplete="off" />
+    <div class="autocomplete-list" id="autocompleteList"></div>
+  </div>
+</div>
+
+<div class="result-screen" id="resultScreen">
+  <h2 style="letter-spacing:2px; margin-bottom:4px;">D<img src="ball.svg" class="title-ball" alt="o"><img src="ball.svg" class="title-ball" alt="o">SRA</h2>
+  <div class="edition-badge" style="margin-bottom:8px;">💯 THE HUNDRED</div>
+  <p class="puzzle-number" id="puzzleNumber"></p>
+  <div class="result-emoji" id="resultEmoji"></div>
+  <h2 id="resultTitle" style="letter-spacing:0;"></h2>
+  <p class="result-subtitle" id="resultSubtitle"></p>
+  <div class="score-grid" id="scoreGrid"></div>
+  <button class="btn btn-share" onclick="shareResult()">📋 Copy Result</button>
+  <p style="margin-top:16px; font-size:0.8rem; color:#555;">Play daily at <span style="color:#a855f7;">playDoosra.com</span></p>
+  <div class="nav-grid" style="margin-top:20px;">
+    <a href="/index.html" class="nav-btn">🌍 International</a>
+    <a href="/ipl.html" class="nav-btn">🏏 IPL</a>
+    <a href="/bbl.html" class="nav-btn">🦘 BBL</a>
+    <a href="/hundred.html" class="nav-btn active">💯 The Hundred</a>
+  </div>
+</div>
+
+<script>
+function closeModal() {
+  document.getElementById('modalOverlay').style.display = 'none';
+  localStorage.setItem('doosra_hundred_seen_intro', '1');
+}
+
+if (localStorage.getItem('doosra_hundred_seen_intro')) {
+  document.getElementById('modalOverlay').style.display = 'none';
+}
+
+const COUNTRY_FLAGS = {
+  'Australia': '🇦🇺', 'India': '🇮🇳', 'England': '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+  'Pakistan': '🇵🇰', 'South Africa': '🇿🇦', 'New Zealand': '🇳🇿',
+  'West Indies': '🏝️', 'Sri Lanka': '🇱🇰', 'Bangladesh': '🇧🇩',
+  'Zimbabwe': '🇿🇼', 'Afghanistan': '🇦🇫', 'Ireland': '🇮🇪',
+  'Scotland': '🏴󠁧󠁢󠁳󠁣󠁴󠁿', 'Netherlands': '🇳🇱', 'Nepal': '🇳🇵',
+  'Namibia': '🇳🇦', 'Kenya': '🇰🇪', 'United Arab Emirates': '🇦🇪'
+};
+
+function getConstraintClass(type) { return `type-${type}`; }
+
+function getConstraintFlag(constraint) {
+  if (constraint.type === 'country') return COUNTRY_FLAGS[constraint.value] || '🌍';
+  if (constraint.type === 'stat') return '📊';
+  if (constraint.type === 'ipl') return '🏏';
+  if (constraint.type === 'bbl') return '🦘';
+  if (constraint.type === 'hundred') return '💯';
+  if (constraint.type === 'cpl') return '🌴';
+  if (constraint.type === 'psl') return '⭐';
+  if (constraint.type === 'sa20') return '🦁';
+  return '🏆';
+}
+
+let players = [];
+let selectedCell = null;
+let guessesRemaining = 10;
+let cellStates = Array(9).fill(null);
+let usedPlayers = new Set();
+let gameOver = false;
+let TODAY_GRID = null;
+
+function getSaveKey() { return `doosra_hundred_state_${TODAY_GRID.date}`; }
+
+function saveState() {
+  const state = { cellStates, guessesRemaining, gameOver, usedPlayers: [...usedPlayers] };
+  localStorage.setItem(getSaveKey(), JSON.stringify(state));
+}
+
+function loadSavedState() {
+  const saved = localStorage.getItem(getSaveKey());
+  if (!saved) return false;
+  try {
+    const state = JSON.parse(saved);
+    cellStates = state.cellStates;
+    guessesRemaining = state.guessesRemaining;
+    gameOver = state.gameOver;
+    usedPlayers = new Set(state.usedPlayers);
+    document.getElementById('guessCount').textContent = guessesRemaining;
+    return true;
+  } catch(e) { return false; }
+}
+
+function satisfiesConstraint(player, constraint) {
+  switch(constraint.type) {
+    case "country":
+      return player.Country === constraint.value ||
+             player.tests === constraint.value ||
+             player.odis === constraint.value ||
+             player.t20is === constraint.value;
+    case "ipl": return player.ipl && player.ipl.includes(constraint.value);
+    case "bbl": return player.bbl && player.bbl.includes(constraint.value);
+    case "cpl": return player.cpl && player.cpl.includes(constraint.value);
+    case "psl": return player.psl && player.psl.includes(constraint.value);
+    case "hundred": return player.hundred && player.hundred.includes(constraint.value);
+    case "sa20": return player.sa20 && player.sa20.includes(constraint.value);
+    case "stat": return (player[constraint.value] || 0) >= constraint.min;
+    default: return false;
+  }
+}
+
+function isValidAnswer(player, cellIndex) {
+  const row = TODAY_GRID.rows[Math.floor(cellIndex / 3)];
+  const col = TODAY_GRID.cols[cellIndex % 3];
+  return satisfiesConstraint(player, row) && satisfiesConstraint(player, col);
+}
+
+function renderGrid() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  const corner = document.createElement('div');
+  corner.className = 'corner';
+  grid.appendChild(corner);
+
+  TODAY_GRID.cols.forEach(col => {
+    const h = document.createElement('div');
+    h.className = `col-header ${getConstraintClass(col.type)}`;
+    h.innerHTML = `<span class="constraint-flag">${getConstraintFlag(col)}</span>${col.label}`;
+    grid.appendChild(h);
+  });
+
+  TODAY_GRID.rows.forEach((row, rowIdx) => {
+    const rh = document.createElement('div');
+    rh.className = `row-header ${getConstraintClass(row.type)}`;
+    rh.innerHTML = `<span class="constraint-flag">${getConstraintFlag(row)}</span>${row.label}`;
+    grid.appendChild(rh);
+
+    TODAY_GRID.cols.forEach((col, colIdx) => {
+      const cellIdx = rowIdx * 3 + colIdx;
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      cell.dataset.index = cellIdx;
+      const state = cellStates[cellIdx];
+      if (state && state !== 'incorrect') {
+        cell.classList.add('correct');
+        cell.innerHTML = `<div><div class="player-name">${state.name}</div><div class="rarity">Rarity: ${state.rarity}</div></div>`;
+      } else if (state === 'incorrect') {
+        cell.classList.add('incorrect');
+        cell.textContent = '✗';
+      } else {
+        cell.textContent = '?';
+      }
+      cell.addEventListener('click', () => selectCell(cellIdx));
+      grid.appendChild(cell);
+    });
+  });
+}
+
+function selectCell(index) {
+  if (gameOver) return;
+  if (cellStates[index] && cellStates[index] !== 'incorrect') return;
+  if (guessesRemaining <= 0) return;
+  selectedCell = index;
+  document.querySelectorAll('.cell').forEach(c => c.classList.remove('selected'));
+  document.querySelector(`.cell[data-index="${index}"]`).classList.add('selected');
+  const row = TODAY_GRID.rows[Math.floor(index / 3)];
+  const col = TODAY_GRID.cols[index % 3];
+  const hint = document.getElementById('searchHint');
+  hint.textContent = `${getConstraintFlag(row)} ${row.label}  ✕  ${getConstraintFlag(col)} ${col.label}`;
+  hint.className = 'search-hint active';
+  document.getElementById('searchContainer').style.display = 'block';
+  document.getElementById('searchInput').value = '';
+  document.getElementById('autocompleteList').innerHTML = '';
+  document.getElementById('searchInput').focus();
+}
+
+document.getElementById('searchInput').addEventListener('input', function() {
+  const query = this.value.toLowerCase().trim();
+  const list = document.getElementById('autocompleteList');
+  list.innerHTML = '';
+  if (query.length < 2) return;
+  const matches = players
+    .filter(p => (p.display_name || p.player || '').toLowerCase().includes(query))
+    .filter(p => !usedPlayers.has(p.player))
+    .slice(0, 20);
+  if (matches.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'autocomplete-item';
+    empty.style.color = '#555';
+    empty.textContent = 'No players found — try surname only';
+    list.appendChild(empty);
+    return;
+  }
+  matches.forEach(p => {
+    const item = document.createElement('div');
+    item.className = 'autocomplete-item';
+    item.textContent = p.display_name || p.player;
+    item.addEventListener('click', () => submitGuess(p));
+    list.appendChild(item);
+  });
+});
+
+function submitGuess(player) {
+  if (selectedCell === null || gameOver) return;
+  document.getElementById('autocompleteList').innerHTML = '';
+  document.getElementById('searchInput').value = '';
+  guessesRemaining--;
+  document.getElementById('guessCount').textContent = guessesRemaining;
+  if (isValidAnswer(player, selectedCell)) {
+    cellStates[selectedCell] = { name: player.display_name || player.player, rarity: player.rarity_score || 100 };
+    usedPlayers.add(player.player);
+    selectedCell = null;
+    document.getElementById('searchContainer').style.display = 'none';
+    const hint = document.getElementById('searchHint');
+    hint.textContent = 'Select a cell to start guessing';
+    hint.className = 'search-hint';
+  } else {
+    cellStates[selectedCell] = 'incorrect';
+    selectedCell = null;
+    document.getElementById('searchContainer').style.display = 'none';
+    const hint = document.getElementById('searchHint');
+    hint.textContent = '✗ Wrong! Select another cell';
+    hint.className = 'search-hint';
+  }
+  saveState();
+  renderGrid();
+  checkGameOver();
+}
+
+function checkGameOver() {
+  const allCorrect = cellStates.every(s => s && s !== 'incorrect');
+  const noGuesses = guessesRemaining <= 0;
+  if (allCorrect || noGuesses) {
+    gameOver = true;
+    saveState();
+    setTimeout(showResult, 800);
+  }
+}
+
+function showResult() {
+  document.getElementById('gameContainer').style.display = 'none';
+  const screen = document.getElementById('resultScreen');
+  screen.style.display = 'block';
+  const correct = cellStates.filter(s => s && s !== 'incorrect').length;
+  const rarityScores = cellStates.map(s => (s && s !== 'incorrect') ? s.rarity : 0);
+  const avgRarity = Math.round(rarityScores.reduce((a, b) => a + b, 0) / 9);
+  if (TODAY_GRID.number) {
+    document.getElementById('puzzleNumber').textContent = `Hundred Doosra #${TODAY_GRID.number}`;
+  }
+  document.getElementById('resultEmoji').textContent =
+    correct === 9 ? '🏆' : correct >= 6 ? '👏' : correct >= 3 ? '🤔' : '😅';
+  document.getElementById('resultTitle').textContent =
+    correct === 9 ? 'Immaculate Grid!' : `${correct}/9 Correct`;
+  document.getElementById('resultSubtitle').textContent =
+    `${10 - guessesRemaining} guesses used · Rarity score: ${avgRarity}/100`;
+  const emojis = cellStates.map(s => s && s !== 'incorrect' ? '🟩' : '🟥');
+  document.getElementById('scoreGrid').innerHTML =
+    emojis.slice(0, 3).join('') + '<br>' +
+    emojis.slice(3, 6).join('') + '<br>' +
+    emojis.slice(6, 9).join('');
+}
+
+function shareResult() {
+  const correct = cellStates.filter(s => s && s !== 'incorrect').length;
+  const rarityScores = cellStates.map(s => (s && s !== 'incorrect') ? s.rarity : 0);
+  const avgRarity = Math.round(rarityScores.reduce((a, b) => a + b, 0) / 9);
+  const emojis = cellStates.map(s => s && s !== 'incorrect' ? '🟩' : '🟥');
+  const puzzleNum = TODAY_GRID.number ? `#${TODAY_GRID.number} ` : '';
+  const text =
+    `Doosra · The Hundred ${puzzleNum}${TODAY_GRID.date}\n` +
+    `${correct}/9 correct | ${10 - guessesRemaining} guesses | Rarity: ${avgRarity}/100\n\n` +
+    emojis.slice(0, 3).join('') + '\n' +
+    emojis.slice(3, 6).join('') + '\n' +
+    emojis.slice(6, 9).join('') +
+    '\n\nPlay at playDoosra.com/hundred.html';
+  navigator.clipboard.writeText(text).then(() => { alert('Result copied to clipboard!'); });
+}
+
+Promise.all([
+  fetch('cricgrid_players.json').then(r => r.json()),
+  fetch('grids-hundred.json').then(r => r.json())
+])
+.then(([playerData, gridData]) => {
+  players = playerData;
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  TODAY_GRID = gridData.find(g => g.date === today);
+  if (!TODAY_GRID) {
+    document.getElementById('loading').textContent = "No puzzle available today. Check back tomorrow!";
+    return;
+  }
+  document.getElementById('loading').style.display = 'none';
+  const gc = document.getElementById('gameContainer');
+  gc.style.display = 'flex';
+  loadSavedState();
+  renderGrid();
+  if (gameOver) { setTimeout(showResult, 300); }
+})
+.catch(err => {
+  document.getElementById('loading').textContent = 'Error loading game. Please refresh.';
+  console.error(err);
+});
+</script>
+</body>
+</html>
