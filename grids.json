@@ -63,9 +63,9 @@
     "cols": [
       {
         "type": "stat",
-        "value": "test_wickets",
-        "min": 100,
-        "label": "100+ Test Wickets"
+        "value": "odi_matches",
+        "min": 50,
+        "label": "50+ ODI Matches"
       },
       {
         "type": "stat",
