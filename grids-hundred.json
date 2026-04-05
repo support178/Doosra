@@ -14,17 +14,395 @@
     ]
   },
   {
-    "number": 1,
+    "number": 2,
     "date": "2026-04-06",
     "rows": [
-      { "type": "hundred", "value": "London Spirit", "label": "London Spirit" },
-      { "type": "stat", "value": "test_runs", "min": 1000, "label": "1000+ Test Runs" },
-      { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" }
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "hundred", "value": "Northern Superchargers", "label": "Northern Superchargers" },
+      { "type": "country", "value": "New Zealand", "label": "New Zealand" }
     ],
     "cols": [
-      { "type": "hundred", "value": "Birmingham Phoenix", "label": "Birmingham Phoenix" },
+      { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
+      { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
+      { "type": "hundred", "value": "London Spirit", "min": 500, "label": "London Spirit" }
+    ]
+  },
+  {
+    "number": 3,
+    "date": "2026-04-07",
+    "rows": [
       { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "country", "value": "South Africa", "label": "South Africa" },
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
+      { "type": "stat", "value": "odi_hundreds", "min": 1, "label": "Scored an ODI Century" },
+      { "type": "stat", "value": "test_runs", "min": 4000, "label": "4000+ Test Runs" }
+    ]
+  },
+  {
+    "number": 4,
+    "date": "2026-04-08",
+    "rows": [
+      { "type": "country", "value": "England", "label": "England" },
+      { "type": "country", "value": "India", "label": "India" },
+      { "type": "country", "value": "West Indies", "label": "West Indies" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_fifties", "min": 10, "label": "10+ Test Fifties" },
+      { "type": "stat", "value": "odi_runs", "min": 1000, "label": "1000+ ODI Runs" },
+      { "type": "stat", "value": "t20_wickets", "min": 50, "label": "50+ T20I Wickets" }
+    ]
+  },
+  {
+    "number": 5,
+    "date": "2026-04-09",
+    "rows": [
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "country", "value": "West Indies", "label": "West Indies" },
+      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_matches", "min": 100, "label": "100+ Test Caps" },
+      { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
+      { "type": "stat", "value": "t20_wickets", "min": 20, "label": "20+ T20I Wickets" }
+    ]
+  },
+  {
+    "number": 6,
+    "date": "2026-04-10",
+    "rows": [
+      { "type": "country", "value": "England", "label": "England" },
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" },
+      { "type": "country", "value": "South Africa", "label": "South Africa" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
+      { "type": "stat", "value": "odi_runs", "min": 2000, "label": "2000+ ODI Runs" },
+      { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
+    ]
+  },
+  {
+    "number": 7,
+    "date": "2026-04-11",
+    "rows": [
+      { "type": "country", "value": "India", "label": "India" },
+      { "type": "country", "value": "New Zealand", "label": "New Zealand" },
+      { "type": "country", "value": "West Indies", "label": "West Indies" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_runs", "min": 5000, "label": "5000+ Test Runs" },
+      { "type": "stat", "value": "odi_hundreds", "min": 5, "label": "5+ ODI Centuries" },
+      { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
+    ]
+  },
+  {
+    "number": 8,
+    "date": "2026-04-12",
+    "rows": [
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" },
       { "type": "country", "value": "England", "label": "England" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
+      { "type": "stat", "value": "odi_matches", "min": 100, "label": "100+ ODI Caps" },
+      { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
+    ]
+  },
+  {
+    "number": 9,
+    "date": "2026-04-13",
+    "rows": [
+      { "type": "country", "value": "South Africa", "label": "South Africa" },
+      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
+      { "type": "country", "value": "New Zealand", "label": "New Zealand" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_fifties", "min": 1, "label": "Scored a Test Fifty" },
+      { "type": "stat", "value": "odi_runs", "min": 1000, "label": "1000+ ODI Runs" },
+      { "type": "stat", "value": "t20_wickets", "min": 20, "label": "20+ T20I Wickets" }
+    ]
+  },
+  {
+    "number": 10,
+    "date": "2026-04-14",
+    "rows": [
+      { "type": "country", "value": "West Indies", "label": "West Indies" },
+      { "type": "country", "value": "India", "label": "India" },
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_matches", "min": 100, "label": "100+ Test Caps" },
+      { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
+      { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
+    ]
+  },
+  {
+    "number": 11,
+    "date": "2026-04-15",
+    "rows": [
+      { "type": "country", "value": "England", "label": "England" },
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "country", "value": "South Africa", "label": "South Africa" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_five_fers", "min": 1, "label": "Took a Test Five-fer" },
+      { "type": "stat", "value": "odi_runs", "min": 5000, "label": "5000+ ODI Runs" },
+      { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
+    ]
+  },
+  {
+    "number": 12,
+    "date": "2026-04-16",
+    "rows": [
+      { "type": "country", "value": "New Zealand", "label": "New Zealand" },
+      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
+      { "type": "country", "value": "West Indies", "label": "West Indies" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_hundreds", "min": 10, "label": "10+ Test Centuries" },
+      { "type": "stat", "value": "odi_matches", "min": 50, "label": "50+ ODI Caps" },
+      { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
+    ]
+  },
+  {
+    "number": 13,
+    "date": "2026-04-17",
+    "rows": [
+      { "type": "country", "value": "India", "label": "India" },
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" },
+      { "type": "country", "value": "England", "label": "England" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
+      { "type": "stat", "value": "odi_runs", "min": 2000, "label": "2000+ ODI Runs" },
+      { "type": "stat", "value": "t20_matches", "min": 20, "label": "20+ T20 Internationals" }
+    ]
+  },
+  {
+    "number": 14,
+    "date": "2026-04-18",
+    "rows": [
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "country", "value": "New Zealand", "label": "New Zealand" },
+      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
+      { "type": "stat", "value": "odi_wickets", "min": 100, "label": "100+ ODI Wickets" },
+      { "type": "stat", "value": "t20_wickets", "min": 50, "label": "50+ T20I Wickets" }
+    ]
+  },
+  {
+    "number": 15,
+    "date": "2026-04-19",
+    "rows": [
+      { "type": "country", "value": "South Africa", "label": "South Africa" },
+      { "type": "country", "value": "West Indies", "label": "West Indies" },
+      { "type": "country", "value": "India", "label": "India" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_runs", "min": 5000, "label": "5000+ Test Runs" },
+      { "type": "stat", "value": "odi_hundreds", "min": 1, "label": "Scored an ODI Century" },
+      { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
+    ]
+  },
+  {
+    "number": 16,
+    "date": "2026-04-20",
+    "rows": [
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" },
+      { "type": "country", "value": "England", "label": "England" },
+      { "type": "country", "value": "Australia", "label": "Australia" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_fifties", "min": 1, "label": "Made a Test Fifty" },
+      { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
+      { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
+    ]
+  },
+  {
+    "number": 17,
+    "date": "2026-04-21",
+    "rows": [
+      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
+      { "type": "country", "value": "South Africa", "label": "South Africa" },
+      { "type": "country", "value": "New Zealand", "label": "New Zealand" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_fifties", "min": 10, "label": "10+ Test Fifties" },
+      { "type": "stat", "value": "odi_runs", "min": 1000, "label": "1000+ ODI Runs" },
+      { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
+    ]
+  },
+  {
+    "number": 18,
+    "date": "2026-04-22",
+    "rows": [
+      { "type": "country", "value": "West Indies", "label": "West Indies" },
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_five_fers", "min": 1, "label": "Took a Test Five-fer" },
+      { "type": "stat", "value": "odi_runs", "min": 2000, "label": "2000+ ODI Runs" },
+      { "type": "stat", "value": "t20_wickets", "min": 20, "label": "20+ T20I Wickets" }
+    ]
+  },
+  {
+    "number": 19,
+    "date": "2026-04-23",
+    "rows": [
+      { "type": "country", "value": "England", "label": "England" },
+      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
+      { "type": "country", "value": "India", "label": "India" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
+      { "type": "stat", "value": "odi_matches", "min": 100, "label": "100+ ODI Caps" },
+      { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
+    ]
+  },
+  {
+    "number": 20,
+    "date": "2026-04-24",
+    "rows": [
+      { "type": "country", "value": "New Zealand", "label": "New Zealand" },
+      { "type": "country", "value": "West Indies", "label": "West Indies" },
+      { "type": "country", "value": "South Africa", "label": "South Africa" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
+      { "type": "stat", "value": "odi_runs", "min": 5000, "label": "5000+ ODI Runs" },
+      { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
+    ]
+  },
+  {
+    "number": 21,
+    "date": "2026-04-25",
+    "rows": [
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "country", "value": "India", "label": "India" },
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_matches", "min": 100, "label": "100+ Test Caps" },
+      { "type": "stat", "value": "odi_hundreds", "min": 1, "label": "Scored an ODI Century" },
+      { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
+    ]
+  },
+  {
+    "number": 22,
+    "date": "2026-04-26",
+    "rows": [
+      { "type": "country", "value": "England", "label": "England" },
+      { "type": "country", "value": "South Africa", "label": "South Africa" },
+      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_runs", "min": 5000, "label": "5000+ Test Runs" },
+      { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
+      { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
+    ]
+  },
+  {
+    "number": 23,
+    "date": "2026-04-27",
+    "rows": [
+      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "country", "value": "India", "label": "India" },
+      { "type": "country", "value": "England", "label": "England" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_runs", "min": 1000, "label": "1000+ Test Runs" },
+      { "type": "stat", "value": "odi_wickets", "min": 100, "label": "100+ ODI Wickets" },
+      { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
+    ]
+  },
+  {
+    "number": 24,
+    "date": "2026-04-28",
+    "rows": [
+      { "type": "country", "value": "New Zealand", "label": "New Zealand" },
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" },
+      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_hundreds", "min": 10, "label": "10+ Test Centuries" },
+      { "type": "stat", "value": "odi_runs", "min": 5000, "label": "5000+ ODI Runs" },
+      { "type": "stat", "value": "t20_wickets", "min": 50, "label": "50+ T20I Wickets" }
+    ]
+  },
+  {
+    "number": 25,
+    "date": "2026-04-29",
+    "rows": [
+      { "type": "country", "value": "South Africa", "label": "South Africa" },
+      { "type": "country", "value": "England", "label": "England" },
+      { "type": "country", "value": "India", "label": "India" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
+      { "type": "stat", "value": "odi_matches", "min": 50, "label": "50+ ODI Caps" },
+      { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
+    ]
+  },
+  {
+    "number": 26,
+    "date": "2026-04-30",
+    "rows": [
+      { "type": "country", "value": "West Indies", "label": "West Indies" },
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" },
+      { "type": "country", "value": "New Zealand", "label": "New Zealand" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_fifties", "min": 1, "label": "Scored a Test Fifty" },
+      { "type": "stat", "value": "odi_hundreds", "min": 5, "label": "5+ ODI Centuries" },
+      { "type": "stat", "value": "t20_matches", "min": 10, "label": "10+ T20 Internationals" }
+    ]
+  },
+  {
+    "number": 27,
+    "date": "2026-05-01",
+    "rows": [
+      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
+      { "type": "country", "value": "England", "label": "England" },
+      { "type": "country", "value": "South Africa", "label": "South Africa" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_matches", "min": 100, "label": "100+ Test Caps" },
+      { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
+      { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
+    ]
+  },
+  {
+    "number": 28,
+    "date": "2026-05-02",
+    "rows": [
+      { "type": "country", "value": "India", "label": "India" },
+      { "type": "country", "value": "New Zealand", "label": "New Zealand" },
+      { "type": "country", "value": "Australia", "label": "Australia" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_five_fers", "min": 1, "label": "Took a Test Five-fer" },
+      { "type": "stat", "value": "odi_runs", "min": 2000, "label": "2000+ ODI Runs" },
+      { "type": "stat", "value": "t20_matches", "min": 20, "label": "20+ T20 Internationals" }
+    ]
+  },
+  {
+    "number": 29,
+    "date": "2026-05-03",
+    "rows": [
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" },
+      { "type": "country", "value": "South Africa", "label": "South Africa" },
+      { "type": "country", "value": "West Indies", "label": "West Indies" }
+    ],
+    "cols": [
+      { "type": "stat", "value": "test_runs", "min": 5000, "label": "5000+ Test Runs" },
+      { "type": "stat", "value": "odi_matches", "min": 1, "label": "Played an ODI" },
+      { "type": "stat", "value": "t20_wickets", "min": 20, "label": "20+ T20I Wickets" }
     ]
   }
 ]
