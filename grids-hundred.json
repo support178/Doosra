@@ -24,7 +24,7 @@
     "cols": [
       { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
       { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
-      { "type": "hundred", "value": "London Spirit", "min": 500, "label": "London Spirit" }
+      { "type": "hundred", "value": "London Spirit", "label": "London Spirit" }
     ]
   },
   {
