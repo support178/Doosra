@@ -28,7 +28,7 @@
     ]
   },
   {
-    "number": 03,
+    "number": 3,
     "date": "2026-04-07",
     "rows": [
       { "type": "country", "value": "West Indies", "label": "West Indies" },
@@ -42,7 +42,7 @@
     ]
   },
   {
-    "number": 04,
+    "number": 4,
     "date": "2026-04-08",
     "rows": [
       { "type": "country", "value": "England", "label": "England" },
@@ -56,7 +56,7 @@
     ]
   },
   {
-    "number": 05,
+    "number": 5,
     "date": "2026-04-09",
     "rows": [
       { "type": "country", "value": "New Zealand", "label": "New Zealand" },
@@ -70,7 +70,7 @@
     ]
   },
   {
-    "number": 06,
+    "number": 6,
     "date": "2026-04-10",
     "rows": [
       { "type": "country", "value": "India", "label": "India" },
@@ -84,7 +84,7 @@
     ]
   },
   {
-    "number": 07,
+    "number": 7,
     "date": "2026-04-11",
     "rows": [
       { "type": "country", "value": "Australia", "label": "Australia" },
@@ -98,7 +98,7 @@
     ]
   },
   {
-    "number": 08,
+    "number": 8,
     "date": "2026-04-12",
     "rows": [
       { "type": "country", "value": "South Africa", "label": "South Africa" },
@@ -112,7 +112,7 @@
     ]
   },
   {
-    "number": 09,
+    "number": 9,
     "date": "2026-04-13",
     "rows": [
       { "type": "country", "value": "Pakistan", "label": "Pakistan" },
