@@ -31,12 +31,12 @@
     "number": 3,
     "date": "2026-04-07",
     "rows": [
-      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
+      { "type": "bbl", "value": "Melbourne Renegades", "label": "Melbourne Renegades" },
       { "type": "country", "value": "South Africa", "label": "South Africa" },
       { "type": "country", "value": "New Zealand", "label": "New Zealand" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_fifties", "min": 10, "label": "10+ Test Fifties" },
+      { "type": "bbl", "value": "Hobart Hurricanes", "label": "Hobart Hurricanes" },
       { "type": "stat", "value": "odi_runs", "min": 1000, "label": "1000+ ODI Runs" },
       { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
     ]
