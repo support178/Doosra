@@ -31,14 +31,14 @@
     "number": 3,
     "date": "2026-04-07",
     "rows": [
-      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "hundred", "value": "Oval Invincibles", "label": "Oval Invincibles" },
       { "type": "country", "value": "South Africa", "label": "South Africa" },
-      { "type": "country", "value": "Pakistan", "label": "Pakistan" }
+      { "type": "country", "value": "West Indies", "label": "West Indies" }
     ],
     "cols": [
       { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
       { "type": "stat", "value": "odi_hundreds", "min": 1, "label": "Scored an ODI Century" },
-      { "type": "stat", "value": "test_runs", "min": 4000, "label": "4000+ Test Runs" }
+      { "type": "hundred", "value": "Southern Brave", "label": "Southern Brave" }
     ]
   },
   {
