@@ -32,13 +32,13 @@
     "date": "2026-04-07",
     "rows": [
       { "type": "country", "value": "West Indies", "label": "West Indies" },
-      { "type": "country", "value": "India", "label": "India" },
-      { "type": "country", "value": "Pakistan", "label": "Pakistan" }
+      { "type": "ipl", "value": "Gujarat Titans", "label": "Gujarat Titans" },
+      { "type": "country", "value": "Australia", "label": "Australia" }
     ],
     "cols": [
       { "type": "stat", "value": "test_matches", "min": 100, "label": "100+ Test Caps" },
       { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
-      { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
+      { "type": "ipl", "value": "Royal Challengers Bangalore", "label": "Royal Challengers Bangalore" }
     ]
   },
   {
