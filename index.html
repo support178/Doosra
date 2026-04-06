@@ -477,7 +477,18 @@
 </nav>
   <p class="guesses-remaining">Guesses remaining: <span id="guessCount">10</span></p>
   <div class="grid-wrapper" id="grid"></div>
-
+<button id="showResultBtn" onclick="showResult()" style="
+  display: none;
+  background: transparent;
+  border: 1px solid #f97316;
+  color: #f97316;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 12px;
+">View results</button>
   <p class="initials-note">Older or more obscure players may be listed by initials and surname. Try searching by surname only.</p>
 
   <p class="search-hint" id="searchHint">Select a cell to start guessing</p>
@@ -488,6 +499,17 @@
 </div>
 
 <div class="result-screen" id="resultScreen">
+  <div class="result-screen" id="resultScreen">
+  <button onclick="closeResult()" style="
+    background: transparent;
+    border: 1px solid #333;
+    color: #666;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-bottom: 16px;
+  ">← View grid</button>
   <h2 style="letter-spacing:2px; margin-bottom:8px;">D<img src="ball.svg" class="title-ball" alt="o"><img src="ball.svg" class="title-ball" alt="o">SRA</h2>
   <p class="puzzle-number" id="puzzleNumber"></p>
   <div class="result-emoji" id="resultEmoji"></div>
@@ -866,15 +888,23 @@ const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0'
   const hasSavedState = loadSavedState();
   renderGrid();
 
-  if (gameOver) {
-    setTimeout(showResult, 300);
-  }
+if (gameOver) {
+  document.getElementById('showResultBtn').style.display = 'block';
+  setTimeout(showResult, 300);
+}
 })
 .catch(err => {
   document.getElementById('loading').textContent =
     'Error loading game. Please refresh.';
   console.error(err);
 });
+
+function closeResult() {
+  document.getElementById('resultScreen').style.display = 'none';
+  document.getElementById('showResultBtn').style.display = 'block';
+  const gc = document.getElementById('gameContainer');
+  gc.style.display = 'flex';
+}
 </script>
 </body>
 </html>
