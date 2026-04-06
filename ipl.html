@@ -473,7 +473,18 @@
     <a href="/bbl.html" class="nav-btn">🦘 BBL</a>
     <a href="/hundred.html" class="nav-btn">💯 The Hundred</a>
   </nav>
-
+<button id="showResultBtn" onclick="showResult()" style="
+  display: none;
+  background: transparent;
+  border: 1px solid #f97316;
+  color: #f97316;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 12px;
+">View results</button>
   <p class="guesses-remaining">Guesses remaining: <span id="guessCount">10</span></p>
   <div class="grid-wrapper" id="grid"></div>
 
@@ -487,6 +498,16 @@
 </div>
 
 <div class="result-screen" id="resultScreen">
+  <button onclick="closeResult()" style="
+    background: transparent;
+    border: 1px solid #f97316;
+    color: #f97316;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-bottom: 16px;
+  ">← View grid</button>
   <h2 style="letter-spacing:2px; margin-bottom:4px;">D<img src="ball.svg" class="title-ball" alt="o"><img src="ball.svg" class="title-ball" alt="o">SRA</h2>
   <div class="edition-badge" style="margin-bottom:8px;">🏏 IPL EDITION</div>
   <p class="puzzle-number" id="puzzleNumber"></p>
@@ -769,12 +790,21 @@ const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0'
   gc.style.display = 'flex';
   const hasSavedState = loadSavedState();
   renderGrid();
-  if (gameOver) { setTimeout(showResult, 300); }
+ if (gameOver) {
+  document.getElementById('showResultBtn').style.display = 'block';
+  setTimeout(showResult, 300);
+}
 })
 .catch(err => {
   document.getElementById('loading').textContent = 'Error loading game. Please refresh.';
   console.error(err);
 });
+  function closeResult() {
+  document.getElementById('resultScreen').style.display = 'none';
+  document.getElementById('showResultBtn').style.display = 'block';
+  const gc = document.getElementById('gameContainer');
+  gc.style.display = 'flex';
+}
 </script>
 </body>
 </html>
