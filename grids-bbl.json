@@ -46,13 +46,13 @@
     "date": "2026-04-08",
     "rows": [
       { "type": "country", "value": "West Indies", "label": "West Indies" },
-      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "bbl", "value": "Brisbane Heat", "label": "Brisbane Heat" },
       { "type": "country", "value": "Pakistan", "label": "Pakistan" }
     ],
     "cols": [
       { "type": "stat", "value": "test_five_fers", "min": 1, "label": "Took a Test Five-fer" },
       { "type": "stat", "value": "odi_runs", "min": 2000, "label": "2000+ ODI Runs" },
-      { "type": "stat", "value": "t20_wickets", "min": 20, "label": "20+ T20I Wickets" }
+      { "type": "bbl", "value": "Sydney Thunder", "label": "Sydney Thunder" }
     ]
   },
   {
