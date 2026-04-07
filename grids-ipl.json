@@ -46,12 +46,12 @@
     "date": "2026-04-08",
     "rows": [
       { "type": "country", "value": "England", "label": "England" },
-      { "type": "country", "value": "Australia", "label": "Australia" },
+      { "type": "ipl", "value": "Mumbai Indians", "label": "Mumbai Indians" },
       { "type": "country", "value": "South Africa", "label": "South Africa" }
     ],
     "cols": [
       { "type": "stat", "value": "test_five_fers", "min": 1, "label": "Took a Test Five-fer" },
-      { "type": "stat", "value": "odi_runs", "min": 5000, "label": "5000+ ODI Runs" },
+      { "type": "ipl", "value": "Rajasthan Royals", "label": "Rajasthan Royals" },
       { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
     ]
   },
