@@ -46,12 +46,12 @@
     "date": "2026-04-08",
     "rows": [
       { "type": "country", "value": "England", "label": "England" },
-      { "type": "country", "value": "India", "label": "India" },
-      { "type": "country", "value": "West Indies", "label": "West Indies" }
+      { "type": "hundred", "value": "Birmingham Phoenix", "label": "Birmingham Phoenix" },
+      { "type": "country", "value": "Pakistan", "label": "Pakistan" }
     ],
     "cols": [
       { "type": "stat", "value": "test_fifties", "min": 10, "label": "10+ Test Fifties" },
-      { "type": "stat", "value": "odi_runs", "min": 1000, "label": "1000+ ODI Runs" },
+      { "type": "hundred", "value": "Welsh Fire", "label": "Welsh Fire" },
       { "type": "stat", "value": "t20_wickets", "min": 50, "label": "50+ T20I Wickets" }
     ]
   },
