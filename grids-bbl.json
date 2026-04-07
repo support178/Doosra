@@ -61,12 +61,12 @@
     "rows": [
       { "type": "country", "value": "England", "label": "England" },
       { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
-      { "type": "country", "value": "India", "label": "India" }
+      { "type": "bbl", "value": "Perth Scorchers", "label": "Perth Scorchers" }
     ],
     "cols": [
       { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
       { "type": "stat", "value": "odi_matches", "min": 100, "label": "100+ ODI Caps" },
-      { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
+      { "type": "bbl", "value": "Melbourne Renegades", "label": "Melbourne Renegades" }
     ]
   },
   {
@@ -75,11 +75,11 @@
     "rows": [
       { "type": "country", "value": "New Zealand", "label": "New Zealand" },
       { "type": "country", "value": "West Indies", "label": "West Indies" },
-      { "type": "country", "value": "South Africa", "label": "South Africa" }
+      { "type": "bbl", "value": "Adelaide Strikers", "label": "Adelaide Strikers" }
     ],
     "cols": [
       { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
-      { "type": "stat", "value": "odi_runs", "min": 5000, "label": "5000+ ODI Runs" },
+      { "type": "bbl", "value": "Melbourne Stars", "label": "Melbourne Stars" },
       { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
     ]
   },
@@ -87,13 +87,13 @@
     "number": 7,
     "date": "2026-04-11",
     "rows": [
-      { "type": "country", "value": "Australia", "label": "Australia" },
-      { "type": "country", "value": "India", "label": "India" },
+      { "type": "country", "value": "South Africa", "label": "South Africa" },
+      { "type": "bbl", "value": "Sydney Thunder", "label": "Sydney Thunder" },
       { "type": "country", "value": "Pakistan", "label": "Pakistan" }
     ],
     "cols": [
       { "type": "stat", "value": "test_matches", "min": 100, "label": "100+ Test Caps" },
-      { "type": "stat", "value": "odi_hundreds", "min": 1, "label": "Scored an ODI Century" },
+      { "type": "bbl", "value": "Brisbane Heat", "label": "Brisbane Heat" },
       { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
     ]
   },
