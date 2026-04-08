@@ -61,11 +61,11 @@
     "rows": [
       { "type": "country", "value": "Australia", "label": "Australia" },
       { "type": "country", "value": "West Indies", "label": "West Indies" },
-      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" }
+      { "type": "hundred", "value": "Birmingham Phoenix", "label": "Birmingham Phoenix" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_matches", "min": 100, "label": "100+ Test Caps" },
-      { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
+      { "type": "hundred", "value": "London Spirit", "label": "London Spirit" },
+      { "type": "stat", "value": "odi_matches", "min": 50, "label": "50+ ODI Caps" },
       { "type": "stat", "value": "t20_wickets", "min": 20, "label": "20+ T20I Wickets" }
     ]
   },
