@@ -60,12 +60,12 @@
     "date": "2026-04-09",
     "rows": [
       { "type": "country", "value": "New Zealand", "label": "New Zealand" },
-      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
+      { "type": "ipl", "value": "Punjab Kings", "label": "Punjab Kings" },
       { "type": "country", "value": "West Indies", "label": "West Indies" }
     ],
     "cols": [
       { "type": "stat", "value": "test_hundreds", "min": 10, "label": "10+ Test Centuries" },
-      { "type": "stat", "value": "odi_matches", "min": 50, "label": "50+ ODI Caps" },
+      { "type": "ipl", "value": "Lucknow Super Giants", "label": "Lucknow Super Giants" },
       { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
     ]
   },
