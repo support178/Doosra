@@ -73,14 +73,14 @@
     "number": 6,
     "date": "2026-04-10",
     "rows": [
-      { "type": "country", "value": "India", "label": "India" },
-      { "type": "country", "value": "Pakistan", "label": "Pakistan" },
-      { "type": "country", "value": "England", "label": "England" }
+      { "type": "country", "value": "New Zealand", "label": "New Zealand" },
+      { "type": "ipl", "value": "Punjab Kings", "label": "Punjab Kings" },
+      { "type": "country", "value": "West Indies", "label": "West Indies" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
-      { "type": "stat", "value": "odi_runs", "min": 2000, "label": "2000+ ODI Runs" },
-      { "type": "stat", "value": "t20_matches", "min": 20, "label": "20+ T20 Internationals" }
+      { "type": "stat", "value": "test_hundreds", "min": 10, "label": "10+ Test Centuries" },
+      { "type": "ipl", "value": "Lucknow Super Giants", "label": "Lucknow Super Giants" },
+      { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
     ]
   },
   {
