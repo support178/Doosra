@@ -87,12 +87,12 @@
     "number": 7,
     "date": "2026-04-11",
     "rows": [
-      { "type": "country", "value": "India", "label": "India" },
+      { "type": "hundred", "value": "Trent Rockets", "label": "Trent Rockets" },
       { "type": "country", "value": "New Zealand", "label": "New Zealand" },
       { "type": "country", "value": "West Indies", "label": "West Indies" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_runs", "min": 5000, "label": "5000+ Test Runs" },
+      { "type": "hundred", "value": "Birmingham Phoenix", "label": "Birmingham Phoenix" },
       { "type": "stat", "value": "odi_hundreds", "min": 5, "label": "5+ ODI Centuries" },
       { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
     ]
