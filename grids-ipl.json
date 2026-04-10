@@ -89,11 +89,11 @@
     "rows": [
       { "type": "country", "value": "Australia", "label": "Australia" },
       { "type": "country", "value": "New Zealand", "label": "New Zealand" },
-      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" }
+      { "type": "ipl", "value": "Gujarat Titans", "label": "Gujarat Titans" }
     ],
     "cols": [
       { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
-      { "type": "stat", "value": "odi_wickets", "min": 100, "label": "100+ ODI Wickets" },
+      { "type": "ipl", "value": "Mumbai Indians", "label": "Mumbai Indians" },
       { "type": "stat", "value": "t20_wickets", "min": 50, "label": "50+ T20I Wickets" }
     ]
   },
