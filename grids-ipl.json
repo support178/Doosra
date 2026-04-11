@@ -4,8 +4,8 @@
     "date": "2026-04-05",
     "rows": [
       { "type": "ipl", "value": "Mumbai Indians", "label": "Mumbai Indians" },
-{ "type": "country", "value": "West Indies", "label": "West Indies" },
-      { "type": "country", "value": "India", "label": "India" }
+      { "type": "country", "value": "West Indies", "label": "West Indies" },
+      { "type": "ipl", "value": "Kolkata Knight Riders", "label": "Kolkata Knight Riders" }
     ],
     "cols": [
       { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" },
@@ -103,11 +103,11 @@
     "rows": [
       { "type": "country", "value": "South Africa", "label": "South Africa" },
       { "type": "country", "value": "West Indies", "label": "West Indies" },
-      { "type": "country", "value": "India", "label": "India" }
+      { "type": "ipl", "value": "Delhi Capitals", "label": "Delhi Capitals" }
     ],
     "cols": [
       { "type": "stat", "value": "test_runs", "min": 5000, "label": "5000+ Test Runs" },
-      { "type": "stat", "value": "odi_hundreds", "min": 1, "label": "Scored an ODI Century" },
+      { "type": "ipl", "value": "Rajasthan Royals", "label": "Rajasthan Royals" },
       { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
     ]
   },
@@ -117,11 +117,11 @@
     "rows": [
       { "type": "country", "value": "Pakistan", "label": "Pakistan" },
       { "type": "country", "value": "England", "label": "England" },
-      { "type": "country", "value": "Australia", "label": "Australia" }
+      { "type": "ipl", "value": "Chennai Super Kings", "label": "Chennai Super Kings" }
     ],
     "cols": [
       { "type": "stat", "value": "test_fifties", "min": 1, "label": "Made a Test Fifty" },
-      { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
+      { "type": "ipl", "value": "Sunrisers Hyderabad", "label": "Sunrisers Hyderabad" },
       { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
     ]
   },
@@ -131,10 +131,10 @@
     "rows": [
       { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
       { "type": "country", "value": "South Africa", "label": "South Africa" },
-      { "type": "country", "value": "New Zealand", "label": "New Zealand" }
+      { "type": "ipl", "value": "Kolkata Knight Riders", "label": "Kolkata Knight Riders" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_fifties", "min": 10, "label": "10+ Test Fifties" },
+      { "type": "ipl", "value": "Royal Challengers Bangalore", "label": "Royal Challengers Bengaluru" },
       { "type": "stat", "value": "odi_runs", "min": 1000, "label": "1000+ ODI Runs" },
       { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
     ]
@@ -145,10 +145,10 @@
     "rows": [
       { "type": "country", "value": "West Indies", "label": "West Indies" },
       { "type": "country", "value": "Australia", "label": "Australia" },
-      { "type": "country", "value": "Pakistan", "label": "Pakistan" }
+      { "type": "ipl", "value": "Punjab Kings", "label": "Punjab Kings" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_five_fers", "min": 1, "label": "Took a Test Five-fer" },
+      { "type": "ipl", "value": "Gujarat Titans", "label": "Gujarat Titans" },
       { "type": "stat", "value": "odi_runs", "min": 2000, "label": "2000+ ODI Runs" },
       { "type": "stat", "value": "t20_wickets", "min": 20, "label": "20+ T20I Wickets" }
     ]
@@ -159,11 +159,11 @@
     "rows": [
       { "type": "country", "value": "England", "label": "England" },
       { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
-      { "type": "country", "value": "India", "label": "India" }
+      { "type": "ipl", "value": "Mumbai Indians", "label": "Mumbai Indians" }
     ],
     "cols": [
       { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
-      { "type": "stat", "value": "odi_matches", "min": 100, "label": "100+ ODI Caps" },
+      { "type": "ipl", "value": "Lucknow Super Giants", "label": "Lucknow Super Giants" },
       { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
     ]
   },
@@ -173,10 +173,10 @@
     "rows": [
       { "type": "country", "value": "New Zealand", "label": "New Zealand" },
       { "type": "country", "value": "West Indies", "label": "West Indies" },
-      { "type": "country", "value": "South Africa", "label": "South Africa" }
+      { "type": "ipl", "value": "Delhi Capitals", "label": "Delhi Capitals" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
+      { "type": "ipl", "value": "Chennai Super Kings", "label": "Chennai Super Kings" },
       { "type": "stat", "value": "odi_runs", "min": 5000, "label": "5000+ ODI Runs" },
       { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
     ]
@@ -186,12 +186,12 @@
     "date": "2026-04-18",
     "rows": [
       { "type": "country", "value": "Australia", "label": "Australia" },
-      { "type": "country", "value": "India", "label": "India" },
+      { "type": "ipl", "value": "Kolkata Knight Riders", "label": "Kolkata Knight Riders" },
       { "type": "country", "value": "Pakistan", "label": "Pakistan" }
     ],
     "cols": [
       { "type": "stat", "value": "test_matches", "min": 100, "label": "100+ Test Caps" },
-      { "type": "stat", "value": "odi_hundreds", "min": 1, "label": "Scored an ODI Century" },
+      { "type": "ipl", "value": "Rajasthan Royals", "label": "Rajasthan Royals" },
       { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
     ]
   },
@@ -201,25 +201,25 @@
     "rows": [
       { "type": "country", "value": "England", "label": "England" },
       { "type": "country", "value": "South Africa", "label": "South Africa" },
-      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" }
+      { "type": "ipl", "value": "Sunrisers Hyderabad", "label": "Sunrisers Hyderabad" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_runs", "min": 5000, "label": "5000+ Test Runs" },
+      { "type": "ipl", "value": "Mumbai Indians", "label": "Mumbai Indians" },
       { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
       { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
     ]
   },
-   {
+  {
     "number": 16,
     "date": "2026-04-20",
     "rows": [
       { "type": "country", "value": "Australia", "label": "Australia" },
-      { "type": "country", "value": "India", "label": "India" },
+      { "type": "ipl", "value": "Royal Challengers Bangalore", "label": "Royal Challengers Bengaluru" },
       { "type": "country", "value": "England", "label": "England" }
     ],
     "cols": [
       { "type": "stat", "value": "test_runs", "min": 1000, "label": "1000+ Test Runs" },
-      { "type": "stat", "value": "odi_wickets", "min": 100, "label": "100+ ODI Wickets" },
+      { "type": "ipl", "value": "Punjab Kings", "label": "Punjab Kings" },
       { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
     ]
   },
@@ -229,10 +229,10 @@
     "rows": [
       { "type": "country", "value": "New Zealand", "label": "New Zealand" },
       { "type": "country", "value": "Pakistan", "label": "Pakistan" },
-      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" }
+      { "type": "ipl", "value": "Gujarat Titans", "label": "Gujarat Titans" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_hundreds", "min": 10, "label": "10+ Test Centuries" },
+      { "type": "ipl", "value": "Delhi Capitals", "label": "Delhi Capitals" },
       { "type": "stat", "value": "odi_runs", "min": 5000, "label": "5000+ ODI Runs" },
       { "type": "stat", "value": "t20_wickets", "min": 50, "label": "50+ T20I Wickets" }
     ]
@@ -243,10 +243,10 @@
     "rows": [
       { "type": "country", "value": "South Africa", "label": "South Africa" },
       { "type": "country", "value": "England", "label": "England" },
-      { "type": "country", "value": "India", "label": "India" }
+      { "type": "ipl", "value": "Kolkata Knight Riders", "label": "Kolkata Knight Riders" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
+      { "type": "ipl", "value": "Chennai Super Kings", "label": "Chennai Super Kings" },
       { "type": "stat", "value": "odi_matches", "min": 50, "label": "50+ ODI Caps" },
       { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
     ]
@@ -257,10 +257,10 @@
     "rows": [
       { "type": "country", "value": "West Indies", "label": "West Indies" },
       { "type": "country", "value": "Pakistan", "label": "Pakistan" },
-      { "type": "country", "value": "New Zealand", "label": "New Zealand" }
+      { "type": "ipl", "value": "Lucknow Super Giants", "label": "Lucknow Super Giants" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_fifties", "min": 1, "label": "Scored a Test Fifty" },
+      { "type": "ipl", "value": "Sunrisers Hyderabad", "label": "Sunrisers Hyderabad" },
       { "type": "stat", "value": "odi_hundreds", "min": 5, "label": "5+ ODI Centuries" },
       { "type": "stat", "value": "t20_matches", "min": 10, "label": "10+ T20 Internationals" }
     ]
@@ -271,10 +271,10 @@
     "rows": [
       { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
       { "type": "country", "value": "England", "label": "England" },
-      { "type": "country", "value": "South Africa", "label": "South Africa" }
+      { "type": "ipl", "value": "Rajasthan Royals", "label": "Rajasthan Royals" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_matches", "min": 100, "label": "100+ Test Caps" },
+      { "type": "ipl", "value": "Gujarat Titans", "label": "Gujarat Titans" },
       { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
       { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
     ]
@@ -283,13 +283,13 @@
     "number": 21,
     "date": "2026-04-25",
     "rows": [
-      { "type": "country", "value": "India", "label": "India" },
+      { "type": "ipl", "value": "Mumbai Indians", "label": "Mumbai Indians" },
       { "type": "country", "value": "New Zealand", "label": "New Zealand" },
       { "type": "country", "value": "Australia", "label": "Australia" }
     ],
     "cols": [
       { "type": "stat", "value": "test_five_fers", "min": 1, "label": "Took a Test Five-fer" },
-      { "type": "stat", "value": "odi_runs", "min": 2000, "label": "2000+ ODI Runs" },
+      { "type": "ipl", "value": "Royal Challengers Bangalore", "label": "Royal Challengers Bengaluru" },
       { "type": "stat", "value": "t20_matches", "min": 20, "label": "20+ T20 Internationals" }
     ]
   },
@@ -299,10 +299,10 @@
     "rows": [
       { "type": "country", "value": "Pakistan", "label": "Pakistan" },
       { "type": "country", "value": "South Africa", "label": "South Africa" },
-      { "type": "country", "value": "West Indies", "label": "West Indies" }
+      { "type": "ipl", "value": "Punjab Kings", "label": "Punjab Kings" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_runs", "min": 5000, "label": "5000+ Test Runs" },
+      { "type": "ipl", "value": "Delhi Capitals", "label": "Delhi Capitals" },
       { "type": "stat", "value": "odi_matches", "min": 1, "label": "Played an ODI" },
       { "type": "stat", "value": "t20_wickets", "min": 20, "label": "20+ T20I Wickets" }
     ]
@@ -312,11 +312,11 @@
     "date": "2026-04-27",
     "rows": [
       { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" },
-      { "type": "country", "value": "India", "label": "India" },
+      { "type": "ipl", "value": "Kolkata Knight Riders", "label": "Kolkata Knight Riders" },
       { "type": "country", "value": "New Zealand", "label": "New Zealand" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
+      { "type": "ipl", "value": "Lucknow Super Giants", "label": "Lucknow Super Giants" },
       { "type": "stat", "value": "odi_wickets", "min": 100, "label": "100+ ODI Wickets" },
       { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
     ]
@@ -327,10 +327,10 @@
     "rows": [
       { "type": "country", "value": "Australia", "label": "Australia" },
       { "type": "country", "value": "South Africa", "label": "South Africa" },
-      { "type": "country", "value": "Pakistan", "label": "Pakistan" }
+      { "type": "ipl", "value": "Sunrisers Hyderabad", "label": "Sunrisers Hyderabad" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
+      { "type": "ipl", "value": "Chennai Super Kings", "label": "Chennai Super Kings" },
       { "type": "stat", "value": "odi_hundreds", "min": 1, "label": "Scored an ODI Century" },
       { "type": "stat", "value": "test_runs", "min": 4000, "label": "4000+ Test Runs" }
     ]
@@ -340,11 +340,11 @@
     "date": "2026-04-29",
     "rows": [
       { "type": "country", "value": "England", "label": "England" },
-      { "type": "country", "value": "India", "label": "India" },
+      { "type": "ipl", "value": "Mumbai Indians", "label": "Mumbai Indians" },
       { "type": "country", "value": "West Indies", "label": "West Indies" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_fifties", "min": 10, "label": "10+ Test Fifties" },
+      { "type": "ipl", "value": "Rajasthan Royals", "label": "Rajasthan Royals" },
       { "type": "stat", "value": "odi_runs", "min": 1000, "label": "1000+ ODI Runs" },
       { "type": "stat", "value": "t20_wickets", "min": 50, "label": "50+ T20I Wickets" }
     ]
@@ -355,10 +355,10 @@
     "rows": [
       { "type": "country", "value": "Australia", "label": "Australia" },
       { "type": "country", "value": "West Indies", "label": "West Indies" },
-      { "type": "country", "value": "Sri Lanka", "label": "Sri Lanka" }
+      { "type": "ipl", "value": "Gujarat Titans", "label": "Gujarat Titans" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_matches", "min": 100, "label": "100+ Test Caps" },
+      { "type": "ipl", "value": "Royal Challengers Bangalore", "label": "Royal Challengers Bengaluru" },
       { "type": "stat", "value": "odi_wickets", "min": 50, "label": "50+ ODI Wickets" },
       { "type": "stat", "value": "t20_wickets", "min": 20, "label": "20+ T20I Wickets" }
     ]
@@ -369,10 +369,10 @@
     "rows": [
       { "type": "country", "value": "England", "label": "England" },
       { "type": "country", "value": "Pakistan", "label": "Pakistan" },
-      { "type": "country", "value": "South Africa", "label": "South Africa" }
+      { "type": "ipl", "value": "Kolkata Knight Riders", "label": "Kolkata Knight Riders" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_hundreds", "min": 1, "label": "Scored a Test Century" },
+      { "type": "ipl", "value": "Delhi Capitals", "label": "Delhi Capitals" },
       { "type": "stat", "value": "odi_runs", "min": 2000, "label": "2000+ ODI Runs" },
       { "type": "stat", "value": "t20_matches", "min": 50, "label": "50+ T20 Internationals" }
     ]
@@ -381,13 +381,13 @@
     "number": 28,
     "date": "2026-05-02",
     "rows": [
-      { "type": "country", "value": "India", "label": "India" },
+      { "type": "ipl", "value": "Punjab Kings", "label": "Punjab Kings" },
       { "type": "country", "value": "New Zealand", "label": "New Zealand" },
       { "type": "country", "value": "West Indies", "label": "West Indies" }
     ],
     "cols": [
       { "type": "stat", "value": "test_runs", "min": 5000, "label": "5000+ Test Runs" },
-      { "type": "stat", "value": "odi_hundreds", "min": 5, "label": "5+ ODI Centuries" },
+      { "type": "ipl", "value": "Lucknow Super Giants", "label": "Lucknow Super Giants" },
       { "type": "stat", "value": "t20_hundreds", "min": 1, "label": "Scored a T20I Century" }
     ]
   },
@@ -397,10 +397,10 @@
     "rows": [
       { "type": "country", "value": "Australia", "label": "Australia" },
       { "type": "country", "value": "Pakistan", "label": "Pakistan" },
-      { "type": "country", "value": "England", "label": "England" }
+      { "type": "ipl", "value": "Sunrisers Hyderabad", "label": "Sunrisers Hyderabad" }
     ],
     "cols": [
-      { "type": "stat", "value": "test_wickets", "min": 50, "label": "50+ Test Wickets" },
+      { "type": "ipl", "value": "Mumbai Indians", "label": "Mumbai Indians" },
       { "type": "stat", "value": "odi_matches", "min": 100, "label": "100+ ODI Caps" },
       { "type": "stat", "value": "t20_runs", "min": 500, "label": "500+ T20I Runs" }
     ]
